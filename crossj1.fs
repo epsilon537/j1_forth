@@ -5,7 +5,7 @@ decimal
 
 0 value outfile
 
-warning off
+\ warning off
 : type ( c-addr u )
     outfile if
         outfile write-file throw
@@ -29,7 +29,7 @@ warning off
 ;
 : space bl emit ;
 : spaces dup 0> if 0 do space loop then ;
-warning on
+\ warning on
 
 vocabulary j1assembler  \ assembly storage and instructions
 vocabulary metacompiler \ the cross-compiling words
@@ -547,7 +547,7 @@ variable currfilename#
 : assert 0= if line# sourcefilename (sliteral) s" (assert)" evaluate then ; immediate
 
 \ hide Swift-Forth's definition of N
-warning off
+\ warning off
 also forth definitions
 : N ( -- n ) [ j1assembler ] N ;
-warning on
+\ warning on
